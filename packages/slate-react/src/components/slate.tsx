@@ -38,14 +38,12 @@ export const Slate = (props: {
   const [context, setContext] = React.useState<SlateContextValue>(() => {
     if (!Node.isNodeList(initialValue)) {
       throw new Error(
-        `[Slate] initialValue is invalid! Expected a list of elements but got: ${Scrubber.stringify(
-          initialValue
-        )}`
+        `[Slate] initialValue is invalid! Expected a list of elements`
       )
     }
     if (!Editor.isEditor(editor)) {
       throw new Error(
-        `[Slate] editor is invalid! You passed: ${Scrubber.stringify(editor)}`
+        `[Slate] editor is invalid!`
       )
     }
     editor.children = initialValue

@@ -79,7 +79,7 @@ const createFactory = <T extends HyperscriptCreators>(creators: T) => {
     const creator = creators[tagName]
 
     if (!creator) {
-      throw new Error(`No hyperscript creator found for tag: <${tagName}>`)
+      throw new Error(`No hyperscript creator found for tag`)
     }
 
     if (attributes == null) {
@@ -111,7 +111,7 @@ const normalizeElements = (elements: HyperscriptShorthands) => {
 
     if (typeof props !== 'object') {
       throw new Error(
-        `Properties specified for a hyperscript shorthand should be an object, but for the custom element <${tagName}>  tag you passed: ${props}`
+        `Properties specified for a hyperscript shorthand should be an object, but for the custom elemen tag`
       )
     }
 

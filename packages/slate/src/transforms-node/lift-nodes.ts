@@ -32,7 +32,7 @@ export const liftNodes: NodeTransforms['liftNodes'] = (
 
       if (path.length < 2) {
         throw new Error(
-          `Cannot lift node at a path [${path}] because it has a depth of less than \`2\`.`
+          `Cannot lift node at a path because it has a depth of less than \`2\`.`
         )
       }
 

@@ -31,7 +31,7 @@ const applyToDraft = (editor: Editor, selection: Selection, op: Operation) => {
 
       if (index > parent.children.length) {
         throw new Error(
-          `Cannot apply an "insert_node" operation at path [${path}] because the destination is past the end of the node.`
+          `Cannot apply an "insert_node" operation at path, because the destination is past the end of the node.`
         )
       }
 
@@ -77,9 +77,7 @@ const applyToDraft = (editor: Editor, selection: Selection, op: Operation) => {
         prev.children.push(...node.children)
       } else {
         throw new Error(
-          `Cannot apply a "merge_node" operation at path [${path}] to nodes of different interfaces: ${Scrubber.stringify(
-            node
-          )} ${Scrubber.stringify(prev)}`
+          `Cannot apply a "merge_node" operation at path to nodes of different interfaces`
         )
       }
 
@@ -99,7 +97,7 @@ const applyToDraft = (editor: Editor, selection: Selection, op: Operation) => {
 
       if (Path.isAncestor(path, newPath)) {
         throw new Error(
-          `Cannot move a path [${path}] to new path [${newPath}] because the destination is inside itself.`
+          `Cannot move a path to new path because the destination is inside itself.`
         )
       }
 
@@ -242,9 +240,7 @@ const applyToDraft = (editor: Editor, selection: Selection, op: Operation) => {
         if (selection == null) {
           if (!Range.isRange(newProperties)) {
             throw new Error(
-              `Cannot apply an incomplete "set_selection" operation properties ${Scrubber.stringify(
-                newProperties
-              )} when there is no current selection.`
+              `Cannot apply an incomplete "set_selection" operation properties when there is no current selection.`
             )
           }
 
@@ -256,7 +252,7 @@ const applyToDraft = (editor: Editor, selection: Selection, op: Operation) => {
 
           if (value == null) {
             if (key === 'anchor' || key === 'focus') {
-              throw new Error(`Cannot remove the "${key}" selection property`)
+              throw new Error(`Cannot remove the selection property`)
             }
 
             delete selection[<keyof Range>key]

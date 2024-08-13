@@ -215,9 +215,7 @@ export const Node: NodeInterface = {
 
     if (Text.isText(node)) {
       throw new Error(
-        `Cannot get the ancestor node at path [${path}] because it refers to a text node instead: ${Scrubber.stringify(
-          node
-        )}`
+        `Cannot get the ancestor node at path [${path}] because it refers to a text node instead`
       )
     }
 
@@ -239,7 +237,7 @@ export const Node: NodeInterface = {
   child(root: Node, index: number): Descendant {
     if (Text.isText(root)) {
       throw new Error(
-        `Cannot get the child of a text node: ${Scrubber.stringify(root)}`
+        `Cannot get the child of a text node`
       )
     }
 
@@ -247,9 +245,7 @@ export const Node: NodeInterface = {
 
     if (c == null) {
       throw new Error(
-        `Cannot get child at index \`${index}\` in node: ${Scrubber.stringify(
-          root
-        )}`
+        `Cannot get child at index \`${index}\` in node`
       )
     }
 
@@ -285,9 +281,7 @@ export const Node: NodeInterface = {
 
     if (Editor.isEditor(node)) {
       throw new Error(
-        `Cannot get the descendant node at path [${path}] because it refers to the root editor node instead: ${Scrubber.stringify(
-          node
-        )}`
+        `Cannot get the descendant node at path [${path}] because it refers to the root editor node instead`
       )
     }
 
@@ -349,9 +343,7 @@ export const Node: NodeInterface = {
   fragment(root: Node, range: Range): Descendant[] {
     if (Text.isText(root)) {
       throw new Error(
-        `Cannot get a fragment starting from a root text node: ${Scrubber.stringify(
-          root
-        )}`
+        `Cannot get a fragment starting from a root text node`
       )
     }
 
@@ -396,9 +388,7 @@ export const Node: NodeInterface = {
 
       if (Text.isText(node) || !node.children[p]) {
         throw new Error(
-          `Cannot find a descendant at path [${path}] in node: ${Scrubber.stringify(
-            root
-          )}`
+          `Cannot find a descendant at path [${path}] in node`
         )
       }
 
@@ -465,9 +455,7 @@ export const Node: NodeInterface = {
 
     if (!Text.isText(node)) {
       throw new Error(
-        `Cannot get the leaf node at path [${path}] because it refers to a non-leaf node: ${Scrubber.stringify(
-          node
-        )}`
+        `Cannot get the leaf node at path because it refers to a non-leaf node`
       )
     }
 

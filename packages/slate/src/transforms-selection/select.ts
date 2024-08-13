@@ -15,9 +15,7 @@ export const select: SelectionTransforms['select'] = (editor, target) => {
 
   if (!Range.isRange(target)) {
     throw new Error(
-      `When setting the selection and the current selection is \`null\` you must provide at least an \`anchor\` and \`focus\`, but you passed: ${Scrubber.stringify(
-        target
-      )}`
+      `When setting the selection and the current selection is \`null\` you must provide at least an \`anchor\` and \`focus\``
     )
   }
 

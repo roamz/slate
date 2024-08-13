@@ -61,7 +61,7 @@ const resolveDescendants = (children: any[]): Descendant[] => {
         addFocusToken(n, child)
       }
     } else {
-      throw new Error(`Unexpected hyperscript child object: ${child}`)
+      throw new Error(`Unexpected hyperscript child object`)
     }
   }
 

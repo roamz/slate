@@ -110,9 +110,7 @@ export const mergeNodes: NodeTransforms['mergeNodes'] = (
       properties = rest as Partial<Element>
     } else {
       throw new Error(
-        `Cannot merge the node at path [${path}] with the previous sibling because it is not the same kind: ${Scrubber.stringify(
-          node
-        )} ${Scrubber.stringify(prevNode)}`
+        `Cannot merge the node at path [${path}] with the previous sibling because it is not the same kind`
       )
     }
 
